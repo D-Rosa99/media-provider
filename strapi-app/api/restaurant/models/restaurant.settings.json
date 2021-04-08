@@ -2,7 +2,7 @@
   "kind": "collectionType",
   "collectionName": "restaurants",
   "info": {
-    "name": "Restaurant"
+    "name": "restaurant"
   },
   "options": {
     "increments": true,
