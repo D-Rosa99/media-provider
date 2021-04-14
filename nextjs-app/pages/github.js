@@ -24,10 +24,10 @@ export default function Github() {
       });
 
       const response = await octokit.request(
-        "PUT /repos/D-Rosa99/strapi-cms-nextjs/contents/post.js",
+        "PUT /repos/D-Rosa99/strapi-cms-nextjs/contents/test.txt",
         {
-          message: "Creating a file in a repository",
-          content: "hello world",
+          message: "updating a file in a repository",
+          content: enc,
           org: "octokit",
           type: "private",
         }
@@ -40,35 +40,35 @@ export default function Github() {
     }
   };
 
-  const handleDeleteFile = async () => {
-    try {
-      const octokit = new Octokit({
-        auth: `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`,
-      });
+  // const handleDeleteFile = async () => {
+  //   try {
+  //     const octokit = new Octokit({
+  //       auth: `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`,
+  //     });
 
-      const response = await octokit.request(
-        "DELETE /repos/D-Rosa99/strapi-cms-nextjs/contents/post.js",
-        {
-          message: "deleting a file in a repository",
-          org: "octokit",
-          type: "private",
-        }
-      );
+  //     const response = await octokit.request(
+  //       "DELETE /repos/D-Rosa99/strapi-cms-nextjs/contents/post.js",
+  //       {
+  //         message: "deleting a file in a repository",
+  //         org: "octokit",
+  //         type: "private",
+  //       }
+  //     );
 
-      console.log(response);
-      console.log(true);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  //     console.log(response);
+  //     console.log(true);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const { data } = await axios.get(
-      `https://api.github.com/users/${modifiedData.githubUser}/repos`
-    );
-    setResponseData(data);
+    // const { data } = await axios.get(
+    //   `https://api.github.com/users/${modifiedData.githubUser}/repos`
+    // );
+    // setResponseData(data);
   };
 
   return (
@@ -108,9 +108,9 @@ export default function Github() {
         </label>
         <br />
         <button onClick={handleCreateFile}>Post a File in a repository</button>
-        <button onClick={handleDeleteFile}>
+        {/* <button onClick={handleDeleteFile}>
           Deleting a File in a repository
-        </button>
+        </button> */}
       </form>
 
       <ul>
