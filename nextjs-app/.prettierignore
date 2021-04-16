@@ -1,0 +1,6 @@
+**/node_modules/*
+**/out/*
+**/.next/*
+tsconfig.json
+yarn.lock
+package.json

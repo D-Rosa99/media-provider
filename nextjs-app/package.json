@@ -5,14 +5,21 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "format-write": "yarn prettier --write .",
+    "format-check": "yarn prettier --check .",
+    "lint": "eslint ./ --ext js,jsx,ts,tsx",
+    "prepare": "cd .. && husky install next/.husky"
   },
   "dependencies": {
     "@octokit/core": "^3.4.0",
-    "axios": "^0.21.1",
     "next": "10.1.2",
-    "next-connect": "^0.10.1",
     "react": "17.0.2",
     "react-dom": "17.0.2"
+  },
+  "devDependencies": {
+    "husky": "^6.0.0",
+    "prettier": "2.2.1",
+    "pretty-quick": "^3.1.0"
   }
 }

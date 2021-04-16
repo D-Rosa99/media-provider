@@ -24,9 +24,9 @@ export default function Github() {
       });
 
       const response = await octokit.request(
-        "PUT /repos/D-Rosa99/strapi-cms-nextjs/contents/test.txt",
+        "PUT /repos/D-Rosa99/strapi-cms-nextjs/contents/post.js",
         {
-          message: "updating a file in a repository",
+          message: "updating post file in the repository",
           content: enc,
           org: "octokit",
           type: "private",
