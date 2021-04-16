@@ -1,0 +1,8 @@
+**/node_modules/*
+**/out/*
+**/.next/*
+tsconfig.json
+yarn.lock
+README.md
+package.json
+.eslintrc.json

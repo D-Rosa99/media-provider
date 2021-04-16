@@ -1,16 +1,15 @@
 import React, { useState } from "react";
-import axios from "axios";
 const { Octokit } = require("@octokit/core");
 
 export default function Github() {
-  const [responseData, setResponseData] = useState([]);
+  // const [responseData, setResponseData] = useState([]);
   const [modifiedData, setModifiedData] = useState({
     githubUser: "",
     contentMessage: "",
   });
 
   const handleChange = ({ target: { name, value } }) => {
-    setModifiedData((prev) => ({
+    setModifiedData(prev => ({
       ...prev,
       [name]: value,
     }));
@@ -30,7 +29,7 @@ export default function Github() {
           content: enc,
           org: "octokit",
           type: "private",
-        }
+        },
       );
 
       console.log(response);
@@ -62,7 +61,7 @@ export default function Github() {
   //   }
   // };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async e => {
     e.preventDefault();
 
     // const { data } = await axios.get(
@@ -86,10 +85,7 @@ export default function Github() {
         </label>
         <br />
         <br />
-        <button
-          disabled={modifiedData.githubUser.length === 0 ? true : false}
-          type="submit"
-        >
+        <button disabled={modifiedData.githubUser.length === 0 ? true : false} type="submit">
           Get User repositories
         </button>
         <br />
@@ -113,16 +109,14 @@ export default function Github() {
         </button> */}
       </form>
 
-      <ul>
+      {/* <ul>
         {responseData &&
-          responseData.map((repository) => (
+          responseData.map(repository => (
             <li key={repository.id}>
-              <a href={repository.html_url}>
-                Repository name: {repository.name}
-              </a>
+              <a href={repository.html_url}>Repository name: {repository.name}</a>
             </li>
           ))}
-      </ul>
+      </ul> */}
     </div>
   );
 }
