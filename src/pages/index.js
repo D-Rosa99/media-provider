@@ -1,6 +1,10 @@
 const Home = () => {
   return (
-    <h1>Hello World</h1>
+    <div>
+      <h1>Hello World</h1>
+      <br />
+      <button className="button">Click Me</button>
+    </div>
   );
 };
 
