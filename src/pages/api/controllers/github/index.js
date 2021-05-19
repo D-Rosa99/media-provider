@@ -1,26 +1,46 @@
 import { Octokit } from "@octokit/core";
 
-export const createFile = async () => {
-  try {
-    const shaFile = "625df4415aab96ff2292f0e6f1ce5e0210dbd9e3";
-    const encText = btoa("Update this file ");
-    const octokit = new Octokit({ auth: "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" });
+const octokit = new Octokit({ auth: process.env.AUTH_TOKEN_GITHUB });
 
-    const response = await octokit.request("PUT /repos/D-Rosa99/test-github/contents/file.js", {
-      message: "creating file",
+export const createAndUpdateFile = async req => {
+  const { path } = req.query;
+  const { commitMsg, userMsg } = req.body;
+  const encText = btoa(`${userMsg}`);
+
+  const response = await octokit.request(
+    `PUT /repos/${process.env.USER_REPOSITORY}/${process.env.USER_REPOSITORY_NAME}/contents/${path}`,
+    {
+      message: `${commitMsg}`,
       content: encText,
       org: "octokit",
       type: "private",
-      sha: shaFile,
-    });
+    },
+  );
 
-    console.log(true);
-    console.log(response);
-  } catch (error) {
-    console.log(`Something goes wong ${error}`);
-  }
+  return response;
 };
 
-export const postFile = async (req, res) => {
-  res.send("Good bye world");
+export const getFile = async req => {
+  const { path } = req.query;
+  const response = await octokit.request(
+    `GET /repos/${process.env.USER_REPOSITORY}/${process.env.USER_REPOSITORY_NAME}/contents/${path}`,
+  );
+
+  return response;
+};
+
+export const deleteFile = async req => {
+  const { path } = req.query;
+  const { commitMsg } = req.body;
+
+  const response = await octokit.request(
+    `DELETE /repos/${process.env.USER_REPOSITORY}/${process.env.USER_REPOSITORY_NAME}/contents/${path}`,
+    {
+      message: `${commitMsg}`,
+      org: "octokit",
+      type: "private",
+    },
+  );
+
+  return response;
 };
