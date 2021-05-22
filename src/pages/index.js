@@ -16,6 +16,7 @@ const Home = () => {
 
   return (
     <div className={"home"}>
+      <h1>Hit the topic you want to make an action in Github</h1>
       <div className={"buttonGroup"}>
         <button className="button">content</button>
         <button className="button">Repository</button>

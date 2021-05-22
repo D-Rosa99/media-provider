@@ -1,18 +1,12 @@
-import { createAndUpdateFile, deleteFile, getFile } from "../controllers/github";
+import { createFile } from "../controllers/github";
 
 const controllers = {
-  POST: createAndUpdateFile,
-  PUT: createAndUpdateFile,
-  DELETE: deleteFile,
-  GET: getFile,
+  POST: createFile,
 };
 
-const handleRequest = req => {
+const handleRequest = (req, res) => {
   try {
-    const response = controllers[req.method](req);
-    console.log(true);
-    console.log(response);
-    // res.send(response)
+    controllers[req.method](req, res);
   } catch (error) {
     console.log(`Something went wrong ${error}`);
   }

@@ -7,14 +7,14 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "format-write": "yarn prettier --write .",
-    "format-check": "yarn prettier --check .",
-    "lint": "eslint ./ --ext js,jsx,ts,tsx",
-    "prepare": "cd .. && husky install nextjs-app/.husky"
+    "format-windows": "prettier --write src/**/*.js{,x}",
+    "lint-windows": "eslint src/**/*.js{,x}",
+    "setup-husky": "husky install .husky"
   },
   "dependencies": {
-    "@octokit/core": "^3.4.0",
+    "axios": "^0.21.1",
     "next": "10.1.2",
+    "octokit": "^1.0.5",
     "react": "17.0.2",
     "react-dom": "17.0.2"
   },
@@ -27,7 +27,6 @@
     "eslint-plugin-promise": "^4.3.1",
     "eslint-plugin-react": "^7.23.2",
     "husky": "^6.0.0",
-    "prettier": "2.2.1",
-    "pretty-quick": "^3.1.0"
+    "prettier": "2.2.1"
   }
 }
