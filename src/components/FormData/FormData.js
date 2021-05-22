@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./FormData.module.css";
 
-const { okButton } = style;
+const { okButton, formData, formDataInput } = style;
 
 const FormData = ({ handleChange, inputValue }) => {
   const { ownerRepoValue, repoNameValue, repoPathValue } = inputValue;
@@ -12,9 +12,10 @@ const FormData = ({ handleChange, inputValue }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className={formData} onSubmit={handleSubmit}>
       <label htmlFor="ownerRepo">Owner Repository</label>
       <input
+        className={formDataInput}
         id="ownerRepo"
         type="text"
         onChange={handleChange}
@@ -23,6 +24,7 @@ const FormData = ({ handleChange, inputValue }) => {
       />
       <label htmlFor="repoName">Repository Name</label>
       <input
+        className={formDataInput}
         id="repoName"
         type="text"
         onChange={handleChange}
@@ -31,6 +33,7 @@ const FormData = ({ handleChange, inputValue }) => {
       />
       <label htmlFor="repoPath">Repository Path</label>
       <input
+        className={formDataInput}
         id="repoPath"
         type="text"
         onChange={handleChange}

@@ -1,3 +1,14 @@
 .okButton {
   background-color: dodgerblue;
 }
+.formData {
+  display: flex;
+  flex-direction: column;
+  width: 16em;
+  margin: 4em auto;
+  padding: 1em;
+  box-shadow: 10px 10px 8px 10px #888888;
+}
+.formDataInput {
+  margin: 1em 1em 3em;
+}
