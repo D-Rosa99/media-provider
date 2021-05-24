@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
+    "js-base64": "^3.6.1",
     "next": "10.1.2",
     "octokit": "^1.0.5",
     "react": "17.0.2",

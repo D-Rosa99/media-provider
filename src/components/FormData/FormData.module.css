@@ -12,3 +12,7 @@
 .formDataInput {
   margin: 1em 1em 3em;
 }
+
+.okButton:hover {
+  background-color: #0e7ceb;
+}

@@ -25,11 +25,7 @@ body {
   margin: 1em;
 }
 
-.buttonGroup {
-  display: flex;
-  justify-content: space-between;
-  width: 50em;
-  border: black 0.3em dotted;
-  padding: 1em;
-  margin: auto;
+.button:hover {
+  cursor: pointer;
+  background-color: #2d6e2f;
 }
